@@ -1,0 +1,27 @@
+<html metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone" >
+<head>
+
+</head>
+
+<body>
+
+<div metal:fill-slot="main">
+
+<h1 tal:content="context/Title">Title</h1>
+
+
+<table border=1><tr><th><center>Performance Notes</center></th></tr><tr><td><p tal:content="structure here/getDescription">getDescription</p></td></tr></table>
+
+<p>Composer: <span tal:content="structure here/getComposer">getComposer</span></p>
+
+<p tal:content="structure here/getBody">getBody</p>
+
+<p>Copyright: <span tal:content="structure here/getCopyright">getCopyright</span></p>
+
+<p tal:content="structure here/getCcli">getCcli</p>
+
+</div>
+</body>
+</html>
+

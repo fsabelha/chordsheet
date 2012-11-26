@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.chordsheet">
+
+    <browser:resource
+        name="style.css"
+        layer="collective.chordsheet.interfaces.IChordSheetSpecific"
+        file="style.css"    
+    />
+
+    <browser:page
+        for="collective.chordsheet.interfaces.IChordSheet"
+        layer="collective.chordsheet.interfaces.IChordSheetSpecific"
+        name="chordsheet_view"
+        template="chordsheet.pt"
+        permission="zope2.View"
+    />
+   
+</configure>
