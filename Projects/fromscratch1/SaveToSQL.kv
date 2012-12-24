@@ -1,0 +1,40 @@
+#: kivy 1.0
+
+<SqlSaver>:
+    Button:
+        size: 200, 20
+        text: "create sql connection"
+        pos: 290, 300
+        pos_hint: {'top', 0.7},{'right', 0.5}
+        on_press: root.connection()
+
+    Button:
+        size: 100, 20
+        text: "create table"
+        pos: 330, 270
+        pos_hint: {'top', 0.7},{'right', 0.5}
+        on_press: root.create_table()
+
+    Button:
+        text: "print something"
+        on_press: root.print_something('something special')
+
+    TextInput:
+        size: 100, 50
+        pos: 290, 400
+        id: put_name
+        text: 'name'
+
+    TextInput:
+        size: 100, 50
+        pos: 290, 350
+        id: put_age
+        text: 'age'
+
+
+    Button:
+        size: 100, 20
+        text: "add info"
+        pos: 500, 270
+        pos_hint: {'top', 0.7},{'right', 0.5}
+        on_press: root.insert_row(put_name.text, put_age.text)

@@ -1,0 +1,61 @@
+<Lyrics>:
+    TextInput:
+        id: lyric_input
+        text: 'stuff'
+        size: 600, 35
+        pos: 20, 525
+
+    Button:
+        text: 'Add Lyric'
+        size: 100, 35
+        pos: 635, 524
+        on_release: root.add_lyric1(lyric_input.text)
+
+
+
+
+
+<Chords>:
+
+
+    GridLayout:
+        cols: 5
+        pos: 50, 440
+        size: 400, 80
+
+        Label:
+            text: 'Choose\nChord'
+
+        Label:
+            text: 'b/#'    
+
+        Label:
+            text: 'Maj/\nMin'
+
+        Label:
+            text: 'Add?'       
+
+        Label:
+            text: ''
+
+        Spinner:
+            id: c_builder1
+            values: 'A', 'B', 'C', 'D', 'E', 'F', 'G'
+
+        Spinner:
+            id: c_builder2
+            values: '', 'b', '#'
+ 
+        Spinner:
+            id: c_builder3
+            values: 'maj', 'min'
+
+        Spinner:
+            id: c_builder4
+            values: '', '2', '4', '6', '7', '9', '11', '13'
+
+        Button:
+            id: add_chord_btn
+            text: c_builder1.text+c_builder2.text+c_builder3.text+c_builder4.text
+            on_release: app.add_new_chord(add_chord_btn.text)
+        

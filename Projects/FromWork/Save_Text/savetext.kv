@@ -1,0 +1,78 @@
+#:kivy 1.0
+
+
+
+<Chords>:
+    Button:
+        text: 'My first Item'
+        size_hint_y: None
+        height: 44
+        on_release: root.select('item1')
+    Label:
+        text: 'Unselectable item'
+        size_hint_y: None
+        height: 44
+    Button:
+        text: 'My second Item'
+        size_hint_y: None
+        height: 44
+        on_release: root.select('item2')
+
+
+
+<Text_Input>:
+
+    saveText: textbox
+
+    bottom_label: custom_label
+
+    TextInput:
+        id: textbox 
+        text: 'type something'
+        size_hint: None, None 
+        size: 300, 50
+        pos: 250, 500
+        on_focus: root.clear_text()
+
+    Button:
+        text: "Save Sticky"
+        size: 100, 20
+        pos: 450, 460
+        on_press: root.copy_sticky()
+
+    Button:
+        text: "Save"
+        size: 100, 20
+        pos: 350, 480
+        on_press: root.save_text()
+
+    Button:
+        text: "Quit"
+        size: 100, 20
+        pos: 250, 480 
+        on_press: exit()
+
+    Button:
+        text: "Retrieve Text"
+        size: 100, 20
+        pos: 450, 480
+        on_press: root.choose_file()
+
+    ToggleButton:
+        text: "Sticky On"
+        size: 100, 20
+        pos: 350, 460
+        on_state: app.add_Draw() if (self.state == 'down') else app.remove_Draw()
+
+
+    Label:
+        id: custom_label
+        text: ''
+        pos: 325, 20
+
+
+
+        
+        
+
+

@@ -1,0 +1,39 @@
+#:kivy 1.0
+
+<MyNotes>:
+
+    Label:
+        text: "I'm a Label"
+        pos: 240, 200
+
+<MyGUI>:
+    FloatLayout:
+        id: me
+        ToggleButton:
+            size: 300, 80
+            text: "add"
+            on_state: app.addthewidget() if (self.state == 'down') else app.removethewidget()
+
+        Button:
+            size: 300, 100
+            text: "add the friggin widget"
+            pos: 400, 350
+            on_press: app.addthewidget()
+
+        Button:
+            size: 300, 40
+            pos: 100, 100
+            text: 'print some stuff'
+
+        Button:
+            text: 'add a line with the ud.touch Directory'
+            size: 400, 30
+            pos: 200, 200
+            on_release: root.call_draw_line()
+
+
+            
+
+
+
+

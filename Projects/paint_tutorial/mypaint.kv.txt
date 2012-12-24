@@ -1,0 +1,7 @@
+#:kivy 1.0.9
+
+
+<ButtonThing>:
+    Button:
+        text: 'Click Here and Something will Pop!!'
+        pos: 350, 300
