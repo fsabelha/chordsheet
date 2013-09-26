@@ -49,10 +49,9 @@ class SqlSaver(Widget):
 
 
     def print_something(self, feedback):
+        self.clearlabel()
         print 'you pressed the button'
         self.addtextlabel(feedback)
-
-
 
 
 class SaveToSQLApp(App):
